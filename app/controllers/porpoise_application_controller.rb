@@ -7,7 +7,6 @@ class PorpoiseApplicationController < ActionController::Base
   class_attribute :remote_resources
   self.remote_resources = [Platform::Movement]
 
-  prepend_before_filter :prepend_mobile_views_path
   prepend_before_filter :track_email_click
   prepend_before_filter :set_locale_load_content
   prepend_before_filter :render_maint_if_pre_launch
@@ -19,14 +18,6 @@ class PorpoiseApplicationController < ActionController::Base
   end
 
   protected
-
-  def mobile_device?
-    device_type == :mobile
-  end
-
-  def device_type
-    request.env['mobvious.device_type']
-  end
 
   def track_email_click
     if(params[:t].present?)
@@ -80,10 +71,6 @@ class PorpoiseApplicationController < ActionController::Base
   end
 
   private
-
-  def prepend_mobile_views_path
-    prepend_view_path Rails.root + 'app' + 'mobile_views' if mobile_device?
-  end
 
   def email_tracking_params
     params.slice(:t).tap do |tracking_params|

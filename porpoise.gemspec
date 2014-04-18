@@ -20,7 +20,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency "money"
   gem.add_dependency "activemerchant", "~> 1.29.3"
   gem.add_dependency "recurly"
-  gem.add_dependency "mobvious"
   gem.add_development_dependency "rspec", ">= 2.0"
   gem.add_development_dependency "rspec-html-matchers"
   gem.add_development_dependency "fakeweb"
