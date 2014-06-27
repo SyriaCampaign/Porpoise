@@ -4,6 +4,8 @@
 
 <%= hidden_field_tag "t", params[:t] %>
 
+<%= opt_in_fields(f) %>
+
 <div class="clear"></div>
 
 <%= labeled_field_group action_content, :email do |is_required| %>

@@ -18,4 +18,11 @@ module Porpoise::ApplicationHelper
   def fb_image
     "//#{request.host_with_port}/assets/fb_logo.jpg"
   end
+
+  def opt_in_fields(form)
+    capture do
+      concat form.hidden_field :opt_in_ip_address, value: request.remote_ip 
+      concat form.hidden_field :opt_in_url, value: request.original_url
+    end
+  end
 end
