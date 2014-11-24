@@ -14,5 +14,4 @@ group :development, :test do
   gem 'rspec_junit_formatter'
   gem 'stickler', '~> 2.2.4'
   gem 'fakeweb'
-  gem 'debugger'
 end
