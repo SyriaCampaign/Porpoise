@@ -21,8 +21,8 @@ module Porpoise::ApplicationHelper
 
   def opt_in_fields(form)
     capture do
-      concat form.hidden_field :opt_in_ip_address, value: request.remote_ip 
-      concat form.hidden_field :opt_in_url, value: request.original_url
+      concat form.hidden_field :ip_address, value: request.remote_ip
+      concat form.hidden_field :referer_url, value: request.original_url
     end
   end
 end
